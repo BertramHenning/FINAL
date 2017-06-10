@@ -19,11 +19,7 @@
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/useradmin.js"></script>
 <script type="text/javascript" src="js/produktbatchadmin.js"></script>
-<script type="text/javascript" src="js/raavareadmin.js"></script>
 <script type="text/javascript" src="js/jquery.serialize-object.js"></script>
-<script type="text/javascript" src="js/receptadmin.js"></script>
-
-<script type="text/javascript" src="js/raavarebatchadmin.js"></script>
 
 
 </head>
@@ -65,7 +61,6 @@
 		<!-- div for fixing menu bar glitch -->
 		<div id="usrmenu">
 			<ul class="mm">
-
 			
 			<!-- Menu "Btns" -->	
 				
@@ -87,7 +82,7 @@
 					<ul id="smid" class="sm">
 						<li><a id="VisRaavareSM" href="#">Vis Raavare</a></li>
                 		<li><a id="OpretRaavareSM" href="#">Opret Raavare</a></li>
-                		<li><a id="OpdaterRaavareSM" href="#">Opdater Raavare</a></li>
+                		<li><a id="RetRaavareSM" href="#">Ret Raavare</a></li>
          		    </ul>
          		   
          		   
@@ -96,23 +91,13 @@
 				
 					<!-- Sub Menu of Receptadmin -->
 					<ul id="smid" class="sm">
-
-                		
 						<li><a id="VisReceptSM" href="#">Vis Recept</a></li>
                 		<li><a id="OpretReceptSM" href="#">Opret Recept</a></li>
-            
          		    </ul>
          		    
          		 
          		<!-- Raavare Batch Admin -->
 				<li><a id="Raavarebatchadmin" href="#RaavarebatchAdministration">Raavarebatch Administration</a>
-				
-				<!-- Sub Menu of Raavarebatch admin -->
-					<ul id="smid" class="sm">
-						<li><a id="VisRaavarebatchSM" href="#">Vis Raavarebatch</a></li>
-                		<li><a id="OpretRaavarebatchSM" href="#">Opret Raavarebatch</a></li>
-                		
-         		    </ul>
 				
 				
 				<!-- Produkt Batch Admin -->
@@ -136,84 +121,12 @@
 		</div>
 		
 		
-	<!-- Table for Raavareadmin -->
-		<div id="rtable" style="display: none">
-			<h2>Raavarer:</h2>
-
-			<table id="raavaretable">
-			
-			</table>
-
-
+		<!-- Show Raavare -->
+		<div id="Testdiv" style="display:none;">
+			TEST ETST ETFDSGHGGGGGGGGGGGGGGG
 		</div>
-	
-   					
-			
 		
-		<!-- Create raavare page -->
-		<div id="createraavare" style="display: none">
-   					
-			
-			<!-- Usr Creation Form -->
-			<div class="CreateRaavareForm">
-				<h2>Create raavare Form</h2>
-
-			<form id="CreateRaavareForm">
-			
-			
-				<!-- User input -->
-				<div id="CUContainer">
-				
-				<div style="width:100%">
-    			<input type="number" name="raavareId" placeholder="Raavare Id" min ="1" max="99" style="width:59%" required>
-    			<input type="text" name="raavareNavn" placeholder="Raavare navn" maxlength="30" pattern="[a-z A-Z]*" style="width:40%" required>
-    			</div>
-    			<input type="text" name="leverandoer" placeholder="Leverandoer" maxlength="50" pattern="[a-z A-Z 0-9._%+-/]*" required>
-    			
-    			</div>
-    				
-    			<!-- Create User Btn -->
-    			<div id="CUbtn" class="CUcontainer" style="background-color: #f1f1f1">			
-    				<input class="cubtn" type="submit"  value="Create raavare">
-    			</div>
-			</form>
-			</div>
-	
-		</div>
-
-	</div>
-	
-	<!-- Update raavare page -->
-		<div id="updateraavare" style="display: none">
-   					
-			
-			<!-- raavare update Form -->
-			<div class="CreateUserForm">
-				<h2>Update raavare form</h2>
-
-			<form id="CreateUserForm">
-			
-			
-				<!-- User input -->
-				<div id="UUContainer">
-				
-				<div style="width:100%">
-				<input type="number" name="raavareId" placeholder="Raavare Id" min ="11" max="99" style="width:59%" required>
-    			<input type="text" name="raavareNavn" placeholder="Raavare navn" maxlength="30" pattern="[a-z A-Z]*" style="width:40%" required>
-    			</div>
-    			<input type="text" name="leverandoer" placeholder="Leverandoer" maxlength="50" pattern="[a-z A-Z]*" required>
-    			
-    			</div>
-    				
-    			<!-- Update raavare Btn -->
-    			<div id="CUbtn" class="UUcontainer" style="background-color: #f1f1f1">			
-    				<input class="cubtn" type="submit"  value="Update raavare">
-    			</div>
-			</form>
-			</div>
-	
-		</div>
-
+		
 		<!-- popop -->
 		<div id="popupID" class="popup" style="display:none" >
   			<span class="popuptext" id="myPopup" >
@@ -241,19 +154,7 @@
 
 
 		</div>
-		
-		<!-- Table for RaavareBatch admin -->
-		<div id="RBtable" style="display: none">
-			<h2>Vis Raavarebatches:</h2>
 
-			<table id="raavarebatchtable">
-			
-			</table>
-
-
-		</div>
-
-	
 		<!-- Create user page -->
 		<div id="createuser" style="display: none">
    					
@@ -281,7 +182,6 @@
     			<!-- Roles -->
     			<b>Roles</b><br>
     			<div class="checkbox-group">
-    			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     			Admin
     			<input type="checkbox" name="roles[]" value="Administrator">
     			Pharmacist
@@ -289,13 +189,13 @@
     			Foreman
     			<input type="checkbox" name="roles[]" value="Værkfører">
     			Operatoer
-    			<input type="checkbox" name="roles[]" value="Laborant">
+    			<input type="checkbox" name="roles[]" value="Laborant" checked>
     			
     			</div>	</div>
     				
     			<!-- Create User Btn -->
     			<div id="CUbtn" class="CUcontainer" style="background-color: #f1f1f1">			
-    				<input id="cubtnid" class="cubtn" type="submit"  value="Create user">
+    				<input class="cubtn" type="submit"  value="Create user">
     			</div>
 			</form>
 			</div>
@@ -312,14 +212,7 @@
 			<!-- Usr update Form -->
 			<div class="UpdateUserForm">
 				<h2>Update User Form</h2>
-			
-			<!-- Form for chosing user by id to update -->
-			<form id="ChooseUserToUpdate">
-				<div id="ChooseContainer">
-					<input type="number" name="userId" placeholder="Enter the id of the user you wish to update" min ="11" max="99" style="width:59%">
-				</div>
-			</form>
-			
+
 			<form id="UpdateUserForm">
 			
 			
@@ -370,110 +263,7 @@
 
 
 		</div>
-		
 	
-	
-	<!-- Create prescription page -->
-		<div id="createprescript" style="display: none">
-   					
-			
-			<!-- Prescription Creation Form -->
-			<div class="CreatePrescription">
-				<h2>Opret Recept</h2>
-
-			<form id="CreatePrescription">
-			
-				<!-- User input -->
-				<div id="CPContainer">
-				
-				<div style="width:100%">
-    			<input type="number" name="receptId" placeholder="Recept ID" min ="1" max="99" required>
-    			</div>
-    			<input type="text" name="receptNavn" placeholder="Recept Navn" maxlength="30" pattern="[a-z A-Z]*" required>
-    			
-    			<!--  !!!Mangler information omkring produktkomp!!! -->
-    			<input type="text" name="tolerance" placeholder="Tolerance (0,1-10,0%)" maxlength="50" required>
-    	
-    			
-    			
-    			
-    			</div>
-    				
-    			<!-- Create Prescription Btn -->
-    			<div id="CPbtn" class="CPcontainer" style="background-color: #f1f1f1">			
-    				<input class="cpbtn" type="submit"  value="Opret recept">
-    			</div>
-			</form>
-			</div>
-	
-		</div>
-		
-		<!-- Create Raavarebatch page -->
-		<div id="createRB" style="display: none">
-   					
-			
-			<!-- Prescription Creation Form -->
-			<div class="CreateRaavarebatch">
-				<h2>Opret Raavarebatch</h2>
-
-			<form id="CreateRaavarebatch">
-			
-				<!-- User input -->
-				<div id="RBContainer">
-				
-				<div style="width:100%">
-    			<input type="number" name="rbId" placeholder="Raavarebatch ID" min ="1" max="99" required>
-    			</div>
-    			<input type="number" name="maengde" placeholder="Maengde" min ="1" max="99" required>
-    			<input type="number" name="raavareId" placeholder="Raavare ID" min ="1" max="99" required>
-    			
-    			
-    			
-    			</div>
-    				
-    			<!-- Create Raavarebatch Btn -->
-    			<div id="RBbtn" class="RBcontainer" style="background-color: #f1f1f1">			
-    				<input class="rbbtn" type="submit"  value="Opret raavarebatch">
-    			</div>
-			</form>
-			</div>
-	
-
-	<!-- Create prescription page -->
-		<div id="createprescript" style="display: none">
-   					
-			
-			<!-- Prescription Creation Form -->
-			<div class="CreatePrescription">
-				<h2>Opret Recept</h2>
-
-			<form id="CreatePrescription">
-			
-			<!-- MANGLER INFORMATION FRA PRODUKTKOMP!!!!!!! -->
-				<!-- User input -->
-				<div id="CPContainer">
-				
-				<div style="width:100%">
-    			<input type="number" name="receptId" placeholder="ReceptNr" min ="1" max="99" required>
-    			</div>
-    			<input type="text" name="receptNavn" placeholder="Navn paa recept" maxlength="30" pattern="[a-z A-Z]*" required>
-    			<input type="number" name="receptId" placeholder="" min ="1" max="99" required>
-    			<input type="text" name="tolerance" placeholder="Tolerance (0,1-10,0%)" maxlength="50" required>
-    	
-    			
-    			
-    			
-    			</div>
-    				
-    			<!-- Create Prescription Btn -->
-    			<div id="CPbtn" class="CPcontainer" style="background-color: #f1f1f1">			
-    				<input class="cpbtn" type="submit"  value="Opret recept">
-    			</div>
-			</form>
-			</div>
-	
-
-		</div>
 	
 	<!-- Validation icon -->
 	<div class="valid">
